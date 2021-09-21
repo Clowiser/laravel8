@@ -19,18 +19,32 @@ use Illuminate\Support\Facades\Route;
 
 //  1 - Mise en place des URL dans votre fichier de route
 
-Route::get('/', function () {
-    return 'Home page'; // -> dans cette méthode on retourne pas par la view mais directement en notant ce que l'on veut retourner
-});
+// Route::get('/', function () {
+//     return 'Home page'; // -> dans cette méthode on retourne pas par la view mais directement en notant ce que l'on veut retourner
+// });
 
-Route::get('/product', function () {
-    return 'Liste des produits';
-});
+// Route::get('/product', function () {
+//     return 'Liste des produits';
+// });
 
-Route::get('/product/{id}', function ($id) { // Paramètre dynamique -> la fonction magique - a revoir
-    return 'Produit' .$id;
-});
+// Route::get('/product/{id}', function ($id) { // Paramètre dynamique -> la fonction magique - a revoir
+//     return 'Produit' .$id;
+// });
 
-Route::get('/cat', function () {
-    return 'Panier';
-});
+// Route::get('/cat', function () {
+//     return 'Panier';
+// });
+
+
+// 2 - Création de CONTROLLER
+
+use App\Http\Controllers\HomeController; // sous windows antislash!! - use à mettre au début
+Route::get('/', [HomeController::class, 'index']);
+
+use App\Http\Controllers\ProductController;
+Route::get('/product', [ProductController::class, 'listProduct']);
+
+Route::get('/product/{id}', [ProductController::class, 'IdProduct']);
+
+use App\Http\Controllers\CartController;
+Route::get('/cart', [CartController::class, 'panier']);
