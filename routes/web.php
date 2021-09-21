@@ -68,6 +68,10 @@ Route::get('/product/{id}', function ($id) {
     return view('product-details');
 });
 
+// Route::get('/product/{id}', function ($id) {
+//     return view('product-details')->withNumero($id);
+// })->where('id', '[0-9]+');
+
 Route::get('/cart', function () {
     return view('cart');
 });
