@@ -13,9 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Base - Avant exercices
+
 // Route::get('/', function () { -> route avec la méthode get car on travaille avec l'URL + / de l'url et la fonction qui est appelée et exécutée
 //     return view('welcome'); -> il retourne la vue(view) 'welcome.blade.php avec les informations HTML et autres qui sont dedans
 // });
+
 
 //  1 - Mise en place des URL dans votre fichier de route
 
@@ -31,20 +34,40 @@ use Illuminate\Support\Facades\Route;
 //     return 'Produit' .$id;
 // });
 
-// Route::get('/cat', function () {
+// Route::get('/cart', function () {
 //     return 'Panier';
 // });
 
 
+
 // 2 - Création de CONTROLLER
 
-use App\Http\Controllers\HomeController; // sous windows antislash!! - use à mettre au début
-Route::get('/', [HomeController::class, 'index']);
+// use App\Http\Controllers\HomeController; // sous windows antislash!! - use à mettre au début
+// Route::get('/', [HomeController::class, 'index']);
 
-use App\Http\Controllers\ProductController;
-Route::get('/product', [ProductController::class, 'listProduct']);
+// use App\Http\Controllers\ProductController;
+// Route::get('/product', [ProductController::class, 'listProduct']);
+// Route::get('/product/{id}', [ProductController::class, 'IdProduct']);
 
-Route::get('/product/{id}', [ProductController::class, 'IdProduct']);
+// use App\Http\Controllers\CartController;
+// Route::get('/cart', [CartController::class, 'panier']);
 
-use App\Http\Controllers\CartController;
-Route::get('/cart', [CartController::class, 'panier']);
+
+
+//  3 - Création des VIEWS
+
+Route::get('/', function () {
+    return view('Homepage') ; // -> return avec le view
+});
+
+Route::get('/product', function () {
+    return view('product-list');
+});
+
+Route::get('/product/{id}', function ($id) {
+    return view('product-details');
+});
+
+Route::get('/cart', function () {
+    return view('cart');
+});
