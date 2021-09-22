@@ -7,6 +7,7 @@ use App\Http\Controllers\Request;
 class CartController extends Controller
 {
     public function panier(){
-        return 'Panier';
+        // return 'Panier';
+        return view('cart');
     }
 }

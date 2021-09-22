@@ -1,14 +1,22 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"> <!-- blade {{}} -->
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('template')
 
-    <title>Liste des produits</title>
-</head>
-<body>
+@section('titre')
+    La liste des Produits
+@endsection
 
-<h1>C'est la liste des produits</h1>
+@section('description')
+    <p>Vous êtes sur la liste des produits</p>
+@endsection
 
-</body>
-</html>
+@section('contenu')
+@foreach($articles as $article)
+<h3>{{ $article->nomArticle }}</h3>
+<p>{{ $article->descArticle }}</p>
+<p>{{ $article->prixArticle}}</p>
+<img class="article" src="{{$article->imgArticle}}" style=width:150px>
+@endforeach
+@endsection
+
+@section('next')
+    <a id="next-page" href="{{url('/product/1')}}">NEXT PAGE</a>
+@endsection

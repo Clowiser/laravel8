@@ -6,7 +6,8 @@ use App\Http\Controllers\Request;
 
 class HomeController extends Controller{
     public function index(){
-        return 'Home Page'; // méthode sans le view (c-a-d en notant directement ce que l'on veut retourner)
+        // return 'Home Page'; // méthode sans le view (c-a-d en notant directement ce que l'on veut retourner)
+        return view('HomePage'); // return la view de HomePage
     }
 }
 ?>

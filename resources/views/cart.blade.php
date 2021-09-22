@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"> <!-- blade {{}} -->
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('template')
 
-    <title>Panier</title>
-</head>
-<body>
+@section('titre')
+    Le Panier
+@endsection
 
-<h1>C'est le Panier</h1>
+@section('description')
+    <p>Vous êtes sur le panier</p>
+@endsection
 
-</body>
-</html>
+@section('next')
+    <a id="next-page" href="{{url('/accueil')}}" class="underline text-gray-900 dark:text-white">NEXT PAGE</a>
+@endsection

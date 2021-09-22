@@ -1,14 +1,22 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"> <!-- blade {{}} -->
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('template')
 
-    <title>Fiche du produit</title>
-</head>
-<body>
+@section('titre')
+    Détails des produits
+@endsection
 
-<h1>C'est le produit intel</h1>
+@section('description')
+    <p>Vous êtes sur l'article : {{$articles}} des produits</p>
+@endsection
 
-</body>
-</html>
+@section('contenu')
+<h3>{{ $article->nomArticle }}</h3>
+<p>{{ $article->idArticle }}</p>
+<p>{{ $article->descArticle }}</p>
+<p>{{ $article->prixArticle}}</p>
+<img class="article" src="{{$article->imgArticle}}" style=width:150px>
+
+@endsection
+
+@section('next')
+    <a id="next-page" href="{{url('/panier')}}" >NEXT PAGE</a>
+@endsection

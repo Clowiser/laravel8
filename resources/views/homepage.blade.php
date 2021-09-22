@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"> <!-- blade {{}} -->
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- la view de Home page : ce qui va être affiché -->
+@extends('template') <!-- ici, il reprend la page template pour un affichage uni, défini dans la template -->
 
-    <title>Home Page</title>
-</head>
-<body>
+@section('titre')
+    Home Page
+@endsection
 
-<h1>C'est la page Home Page</h1>
+@section('description')
+    <p>Vous êtes sur l'accueil</p>
+@endsection
 
-</body>
-</html>
+@section('next')
+    <a id="next-page" href="{{url('/product')}}">NEXT PAGE</a>
+@endsection

@@ -42,7 +42,7 @@ use Illuminate\Support\Facades\Route;
 
 // 2 - Création de CONTROLLER
 
-// use App\Http\Controllers\HomeController; // sous windows antislash!! - use à mettre au début
+// use App\Http\Controllers\HomeController; //  antislash!! - use à mettre au début
 // Route::get('/', [HomeController::class, 'index']);
 
 // use App\Http\Controllers\ProductController;
@@ -56,22 +56,31 @@ use Illuminate\Support\Facades\Route;
 
 //  3 - Création des VIEWS
 
-Route::get('/', function () {
-    return view('Homepage') ; // -> return avec le view
-});
+// Route::get('/', function () {
+//     return view('Homepage') ; // -> return avec le view
+// });
 
-Route::get('/product', function () {
-    return view('product-list');
-});
-
-Route::get('/product/{id}', function ($id) {
-    return view('product-details');
-});
+// Route::get('/product', function () {
+//     return view('product-list');
+// });
 
 // Route::get('/product/{id}', function ($id) {
-//     return view('product-details')->withNumero($id);
-// })->where('id', '[0-9]+');
+//     return view('product-details');
+// });
 
-Route::get('/cart', function () {
-    return view('cart');
-});
+// // Route::get('/product/{id}', function ($id) {
+// //     return view('product-details')->withNumero($id);
+// // })->where('id', '[0-9]+');
+
+// Route::get('/cart', function () {
+//     return view('cart');
+// });
+
+
+// 4 - reprise de l'étape 3 Création des VIEWS avec le maintient de l'étape 2 controllers + la méthode permettant d'afficher des articles en fonctions de l'id noté en URL
+
+Route::get('accueil','App\Http\Controllers\HomeController@index'); // le return se fait par le controller dont la fonction se trouve dans HomeController.php
+Route::get('/','App\Http\Controllers\HomeController@index');
+Route::get('panier','App\Http\Controllers\CartController@panier');
+Route::get('product','App\Http\Controllers\ProductController@listProduct');
+Route::get('product/{id}','App\Http\Controllers\ProductController@IdProduct');
