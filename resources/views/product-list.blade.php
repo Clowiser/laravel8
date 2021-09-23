@@ -13,10 +13,12 @@
 <h3>{{ $article->nomArticle }}</h3>
 <p>{{ $article->descArticle }}</p>
 <p>{{ $article->prixArticle}}</p>
-<img class="article" src="{{$article->imgArticle}}" style=width:150px>
+<a href="{{url("/product/$article->idArticles")}}">
+     <img class="article" src="{{$article->imgArticle}}" style=width:150px>
+</a>
 @endforeach
 @endsection
 
 @section('next')
-    <a id="next-page" href="{{url('/product/1')}}">NEXT PAGE</a>
+    <a id="next-page" href="{{url('panier')}}">NEXT PAGE</a>
 @endsection

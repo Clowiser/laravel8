@@ -1,13 +1,11 @@
 @extends('template')
 
 @section('titre')
-    Détails des produits
+    La liste des Produits
 @endsection
 
 @section('description')
-@foreach($articles as $article)
-    <p>Vous êtes sur l'article : {{ $article->idArticles }} des produits</p>
-@endforeach
+    <p>Vous êtes sur la liste des produits</p>
 @endsection
 
 @section('contenu')
@@ -15,11 +13,12 @@
 <h3>{{ $article->nomArticle }}</h3>
 <p>{{ $article->descArticle }}</p>
 <p>{{ $article->prixArticle}}</p>
-<img class="article" src="{{$article->imgArticle}}" style=width:150px>
+<a href="{{url("/product/$article->idArticles")}}">
+     <img class="article" src="{{$article->imgArticle}}" style=width:150px>
+</a>
 @endforeach
-
 @endsection
 
 @section('next')
-    <a id="next-page" href="{{url('product')}}" >NEXT PAGE</a>
+    <a id="next-page" href="{{url('panier')}}">NEXT PAGE</a>
 @endsection

@@ -77,6 +77,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
+
 // 4 - reprise de l'étape 3 Création des VIEWS avec le maintient de l'étape 2 controllers + la méthode permettant d'afficher des articles en fonctions de l'id noté en URL
 
 Route::get('accueil','App\Http\Controllers\HomeController@index'); // le return se fait par le controller dont la fonction se trouve dans HomeController.php
@@ -84,3 +85,9 @@ Route::get('/','App\Http\Controllers\HomeController@index');
 Route::get('panier','App\Http\Controllers\CartController@panier');
 Route::get('product','App\Http\Controllers\ProductController@listProduct');
 Route::get('product/{id}','App\Http\Controllers\ProductController@IdProduct');
+
+
+
+use App\Http\Controllers\ProductController;
+Route::get('orderName', [ProductController::class, 'ListProductByName']); // It6 par Nom - Une page contenant la liste de l’ensemble des produits référencés dans la BDD triés par prix croissant en utilisant le model Product 
+Route::get('orderPrix', [ProductController::class, 'ListProductByPrix']); // It6 par Prix - Une page contenant la liste de l’ensemble des produits référencés dans la BDD triés par prix croissant en utilisant le model Product 
