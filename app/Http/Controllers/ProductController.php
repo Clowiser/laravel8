@@ -29,8 +29,8 @@ class ProductController extends Controller{
 
     // 4 - méthode permettant d'afficher des articles en fonctions de l'id noté en URL 
     public function IdProduct($id){
-        $articles = Article::firstwhere('idArticles', $id);
-        return view('product-details', ['articles' => $articles]);
+        $article = Article::firstwhere('idArticles', $id);
+        return view('product-details', ['article' => $article]);
     }
 
 }

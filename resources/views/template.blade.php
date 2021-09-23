@@ -19,6 +19,7 @@
         <ol>
             <li class=""><a href="{{ url('/product') }}">Catalogue</a></li>
             <li class=""><a href="{{ url('panier') }}">Panier</a></li>
+            <li class=""><a href="{{ url('') }}">Back Office</a></li>
         </ol>
     </nav>
 </header>

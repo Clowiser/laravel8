@@ -5,14 +5,14 @@
 @endsection
 
 @section('description')
-    <p>Vous êtes sur l'article : {{ $articles->idArticles }} des produits</p>
+    <p>Vous êtes sur l'article : {{ $article->idArticles }} des produits</p>
 @endsection
 
 @section('contenu')
-        <h3>{{ $articles->nomArticle }}</h3>
-        <p>{{ $articles->descArticle }}</p>
-        <p>{{ $articles->prixArticle }}</p>
-        <img class="article" src="{{ $articles->imgArticle }}" style=width:150px>
+        <h3>{{ $article->nomArticle }}</h3>
+        <p>{{ $article->descArticle }}</p>
+        <p>{{ $article->prixArticle }}</p>
+        <img class="article" src="{{ $article->imgArticle }}" style=width:150px>
 @endsection
 
 @section('next')

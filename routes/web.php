@@ -85,6 +85,7 @@ Route::get('/','App\Http\Controllers\HomeController@index');
 Route::get('panier','App\Http\Controllers\CartController@panier');
 Route::get('product','App\Http\Controllers\ProductController@listProduct');
 Route::get('product/{id}','App\Http\Controllers\ProductController@IdProduct');
+Route::get('backoffice','App\Http\Controllers\BackOfficeController@index');
 
 
 
