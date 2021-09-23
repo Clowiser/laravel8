@@ -10,13 +10,15 @@
 
 <header> 
 <div id="titre">
-<a href="{{url('accueil')}}"><h1>La Boutique des Etoiles</h1></a>
+    <a href="{{ url('accueil') }}">
+        <h1>La Boutique des Etoiles</h1>
+    </a>
 </div> 
 
     <nav class="nav_bar">
         <ol>
-            <li class=""><a href="{{url('/product')}}">Catalogue</a></li>
-            <li class=""><a href="{{url('panier')}}">Panier</a></li>
+            <li class=""><a href="{{ url('/product') }}">Catalogue</a></li>
+            <li class=""><a href="{{ url('panier') }}">Panier</a></li>
         </ol>
     </nav>
 </header>
